@@ -1,0 +1,21 @@
+html{
+    background-color: white;
+}
+.container{
+    background-color: burlywood;
+    height: 100vh
+}
+#to-do-list{
+    margin-right: 20%;
+    margin-left: 20%;
+    width:auto ;
+    background-color: white;
+    box-shadow: 10px 5px 5px grey;
+    border-collapse: separate;
+}
+#myInput{
+    display: inline-table;
+}
+.linhas-tabela{
+    height: 5vh;
+}
