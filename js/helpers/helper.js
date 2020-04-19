@@ -1,5 +1,4 @@
 class HelperTable {
-
  
   filtraETroca(){
     $(document).ready(function(){

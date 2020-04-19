@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Tarefas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/checklist3.webp">
+    <title>To do List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 
@@ -10,7 +12,7 @@
 </head>
 <body class="container">
     
-    <h1 class="text-center">Lista de tarefas</h1>
+    <h1><img src='img/tdl.png' class="d-flex justify-content-center"id="titulo-pagina" alt="To do List"></h1>
     <table id="to-do-list" class=" table table-hover table-bordered table-responsive">
         <thead class="row">
             <tr class="">
@@ -20,26 +22,20 @@
                 <th class="dropdown input-group input-assunto">
                     <input class="form-control dropdown-toggle" id="myInput" type="text" data-toggle="dropdown" autocomplete="off" placeholder="Assunto:">
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary btn-add" onclick="controller.adiciona()">ADD</button>
+                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona()">ADD</button>
                     </span>
                     <ul class="dropdown-menu">    
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                        <li><a href="#">jQuery</a></li>
-                        <li><a href="#">Bootstrap</a></li>
-                        <li><a href="#">Angular</a></li>
+                        <li><a href="#">Estudos</a></li>
+                        <li><a href="#">Atividades Fisicas</a></li>
+                        <li><a href="#">Trabalho</a></li>
+                        <li><a href="#">Filhos</a></li>
+                        <li><a href="#">Casa</a></li>
                     </ul>
-
                 </th>
-
             </tr>
         </thead>
         <tbody>
-            <tr class="linhas-tabela">
-                <td class="col-lg-8 col-md-8 col-xs-8"></td>
-                <td class=""></td>
-            </tr>
+            
         </tbody>
         
         <tfoot>
@@ -51,6 +47,7 @@
     <script src="js/helpers/helper.js"></script>
     <script src="js/index.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/view/ViewTarefa.js"></script>
     <script>let controller = new ControllerTarefa();</script>
 </body>
 </html>

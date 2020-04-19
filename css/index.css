@@ -1,9 +1,12 @@
-html{
-    background-color: white;
-}
 .container{
     background-color: burlywood;
     height: 100vh
+}
+
+#titulo-pagina{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
 }
 #to-do-list{
     margin-right: 20%;
@@ -17,5 +20,18 @@ html{
     display: inline-table;
 }
 .linhas-tabela{
-    height: 5vh;
+    height: 35px;
+}
+
+@media only screen and (max-width: 600px){
+    .container, img {
+        width: 100%;
+    }
+    .input-group-btn{
+        position: absolute;
+        transform: translateX(9100%);
+    }
+    #myInput{
+        width: 100%;
+    }
 }
