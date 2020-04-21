@@ -3,12 +3,12 @@ class ControllerTarefa{
         this.item = $('#item').text();
         this.classe = $('#myInput');
         this.status = true;
+
+        this.view = new ViewTarefa();
     }
-    _adiciona(){
-        item = this.item;
-        classe = this.classe;
-        status = this.status;
-        let view = new ViewTarefa();
-        view.template(item, classe, status);
+    _adiciona(tabela){
+        
+        $(tabela).innerHTML = view.template(this.item, this.classe, this.status);
+        
     }
 }

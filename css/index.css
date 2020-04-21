@@ -19,10 +19,26 @@
 #myInput{
     display: inline-table;
 }
+#td-item{
+    vertical-align: middle;
+}
 .linhas-tabela{
     height: 35px;
 }
-
+.classes{
+    float: right;
+    color: grey;
+    font-size: 0.8em;
+}
+.icone-remove{
+    color: red;
+}
+.icone-ok{
+    color: green;
+} 
+.btn-remove{
+    float: right;
+}
 @media only screen and (max-width: 600px){
     .container, img {
         width: 100%;
@@ -34,4 +50,5 @@
     #myInput{
         width: 100%;
     }
+
 }

@@ -22,7 +22,7 @@
                 <th class="dropdown input-group input-assunto">
                     <input class="form-control dropdown-toggle" id="myInput" type="text" data-toggle="dropdown" autocomplete="off" placeholder="Assunto:">
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona()">ADD</button>
+                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona('tbody')">ADD</button>
                     </span>
                     <ul class="dropdown-menu">    
                         <li><a href="#">Estudos</a></li>
@@ -35,7 +35,15 @@
             </tr>
         </thead>
         <tbody>
-            
+            <tr class='linhas-tabela'>
+                <td class='col-lg-8 col-md-8 col-xs-8 'id='td-item'>
+                exemplo <i class='classes'>classe do exemplo</i>
+                </td>
+                <td><button type="button" class="btn btn-default btn-ok "><span class="glyphicon glyphicon-ok icone-ok" aria-hidden="true"></span></button>
+                    <button type="button" class="btn btn-default btn-remove"><span class="glyphicon glyphicon-remove icone-remove" aria-hidden="true"></span></button>
+            </td>
+                </tr>;
+        
         </tbody>
         
         <tfoot>
