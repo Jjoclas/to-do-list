@@ -50,5 +50,7 @@
     #myInput{
         width: 100%;
     }
-
+    .btn-remove{
+        position: absolute;
+    }
 }
