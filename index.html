@@ -17,12 +17,12 @@
         <thead class="row">
             <tr class="">
                 <th class="col-lg-8 col-md-8 col-xs-8">
-                    <input type="text" class="form-control" id="item">
+                    <input type="text" class="form-control" autofocus id="item">
                 </th>
                 <th class="dropdown input-group input-assunto">
                     <input class="form-control dropdown-toggle" id="myInput" type="text" data-toggle="dropdown" autocomplete="off" placeholder="Assunto:">
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona('tbody')">ADD</button>
+                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona()">ADD</button>
                     </span>
                     <ul class="dropdown-menu">    
                         <li><a href="#">Estudos</a></li>
@@ -39,10 +39,15 @@
                 <td class='col-lg-8 col-md-8 col-xs-8 'id='td-item'>
                 exemplo <i class='classes'>classe do exemplo</i>
                 </td>
-                <td><button type="button" class="btn btn-default btn-ok "><span class="glyphicon glyphicon-ok icone-ok" aria-hidden="true"></span></button>
-                    <button type="button" class="btn btn-default btn-remove"><span class="glyphicon glyphicon-remove icone-remove" aria-hidden="true"></span></button>
-            </td>
-                </tr>;
+                <td>
+                    <button type="button" class="btn btn-default btn-ok ">
+                        <span class="glyphicon glyphicon-ok icone-ok" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-remove">
+                        <span class="glyphicon glyphicon-remove icone-remove" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>;
         
         </tbody>
         
@@ -51,11 +56,13 @@
     </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/controller/Controller.js"></script>
     <script src="js/helpers/helper.js"></script>
     <script src="js/index.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="js/view/ViewTarefa.js"></script>
+    <script src="js/model/Tarefa.js"></script>
+    <script src="js/model/ListaTarefas.js"></script>
+    <script src="js/controller/Controller.js"></script>
     <script>let controller = new ControllerTarefa();</script>
 </body>
 </html>
