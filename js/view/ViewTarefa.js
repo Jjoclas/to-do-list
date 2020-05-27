@@ -27,4 +27,11 @@ class ViewTarefa{
     update(lista){
         this.elemento.innerHTML = this.template(lista);
     }
+    toggleStatus(array, status){
+        array.lista.map(tarefa => { 
+            if(status & tarefa.style.display){
+                tarefa.toggle();
+            }
+        });
+    }
 }

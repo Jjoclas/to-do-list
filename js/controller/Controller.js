@@ -15,5 +15,7 @@ class ControllerTarefa{
         this.view.update(this.lista);
         HelperTable.limpaInput();
     }
-    
+    filtraStatus(status){
+        this.view.toggleStatus(this.lista, status);
+    }
 }

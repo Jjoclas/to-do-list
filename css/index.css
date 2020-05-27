@@ -39,6 +39,15 @@
 .btn-remove{
     float: right;
 }
+tfoot button{
+ 
+    float: right;
+    padding-left: 10px;
+    color:blue;
+}
+tfoot button:active{
+    color: grey;
+}
 @media only screen and (max-width: 600px){
     .container, img {
         width: 100%;
