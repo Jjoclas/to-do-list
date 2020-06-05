@@ -26,9 +26,10 @@ class ControllerTarefa{
     remove(event, tarefa){
         console.log(this.lista)
         this.lista.lista.map((element,index) => {
-            if(element = tarefa){
-                this.lista.lista.splice(index-1,1);
-                console.log(this.lista)
+            if(element == tarefa){
+                this.lista.lista.splice(index,1);
+                console.log(index)
+                console.log(element)
             }
         });
         console.log(tarefa.status)
