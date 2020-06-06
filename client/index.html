@@ -34,21 +34,7 @@
                 </th>
             </tr>
         </thead>
-        <tbody>
-            <tr class='linhas-tabela'>
-                <td class='col-lg-8 col-md-8 col-xs-8 'id='td-item'>
-                exemplo <i class='classes'>classe do exemplo</i>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-default btn-ok "onclick='controller.concluiTarefa(event)'>
-                        <span class="glyphicon glyphicon-ok icone-ok" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-remove" onclick='controller.removeTarefa(event)'>
-                        <span class="glyphicon glyphicon-remove icone-remove" aria-hidden="true"></span>
-                    </button>
-                </td>
-            </tr>
-   
+        <tbody> 
 
         </tbody>
         
@@ -73,11 +59,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/helpers/helper.js"></script>
-    <script src="js/index.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="js/view/ViewTarefa.js"></script>
-    <script src="js/model/Tarefa.js"></script>
-    <script src="js/model/ListaTarefas.js"></script>
+     <script src="js/model/ListaTarefas.js"></script>
     <script src="js/controller/Controller.js"></script>
     <script>let controller = new ControllerTarefa();</script>
 </body>
