@@ -1,13 +1,13 @@
 class ListaTarefas{
     constructor(){
-        this.lista = [];
+        this._lista = [];
     }
 
     adicionaTarefa(tarefa){
-        this.lista.push(tarefa)
+        this._lista.push(tarefa)
     }
 
-    get tarefas(){
-        return this.lista;
+    getTarefas(){
+        return this._lista;
     }
 }

@@ -32,9 +32,11 @@
 }
 .icone-remove{
     color: red;
+    pointer-events: none
 }
 .icone-ok{
     color: green;
+    pointer-events: none
 } 
 .btn-remove{
     float: right;
@@ -52,8 +54,11 @@ tfoot button:active{
 	opacity: 0;
 	transition: 0.5s;
 }
+.efeitoOk{
+    background-color: greenyellow;
+}
 .concluido{
-    border: 2px solid greenyellow;
+    border: 10px solid greenyellow;
 }
 
 @media only screen and (max-width: 600px){
@@ -71,20 +76,3 @@ tfoot button:active{
         position: absolute;
     }
 }
-/*`
-                <tr class='linhas-tabela'>
-                    <td class='col-lg-8 col-md-8 col-xs-8' id='td-item'>
-                        ${tarefa.item} 
-                        <i class='classes'>
-                            ${tarefa.classe}
-                        </i>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-default btn-ok" onClick='controller.conclui(event, this, "${tarefa}")'>
-                            <span class="glyphicon glyphicon-ok icone-ok" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="btn btn-default btn-remove" onclick='controller.remove(event)'>
-                            <span class="glyphicon glyphicon-remove icone-remove" aria-hidden="true"></span>
-                        </button>
-                    </td>
-                </tr>` */
