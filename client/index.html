@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/checklist3.webp">
+    <title>To do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+
+</head>
+<body class="container">
+    
+    <h1><img src='img/tdl.png' class="d-flex justify-content-center"id="titulo-pagina" alt="To do List"></h1>
+    <table id="to-do-list" class=" table table-hover table-bordered table-responsive">
+        <thead class="row">
+            <tr class="">
+                <th class="col-lg-8 col-md-8 col-xs-8">
+                    <input type="text" class="form-control" autofocus id="item" autocomplete="off" placeholder="Tarefa">
+                </th>
+                <th class="dropdown input-group input-assunto">
+                    <input class="form-control dropdown-toggle" id="myInput" type="text" data-toggle="dropdown" autocomplete="off" placeholder="Assunto:">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona()">ADD</button>
+                    </span> 
+                    <ul class="dropdown-menu">    
+                        <li><a href="#">Estudos</a></li>
+                        <li><a href="#">Atividades Fisicas</a></li>
+                        <li><a href="#">Trabalho</a></li>
+                        <li><a href="#">Filhos</a></li>
+                        <li><a href="#">Casa</a></li>
+                    </ul>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class='linhas-tabela'>
+                <td class='col-lg-8 col-md-8 col-xs-8 'id='td-item'>
+                exemplo <i class='classes'>classe do exemplo</i>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default btn-ok "onclick='controller.concluiTarefa(event)'>
+                        <span class="glyphicon glyphicon-ok icone-ok" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-remove" onclick='controller.removeTarefa(event)'>
+                        <span class="glyphicon glyphicon-remove icone-remove" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>
+   
+
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <button type="button" class="btn btn-info"onclick=''>
+                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default"onclick=''>
+                        <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-danger "onclick='controller.limpaLista()'>
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-success"  onclick="controller.filtraStatus(true)">Concluidos</button>
+                    <button type="button" class="btn btn-primary"  onclick="controller.filtraStatus(false)">Ativos</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/helpers/helper.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/view/ViewTarefa.js"></script>
+    <script src="js/model/Tarefa.js"></script>
+    <script src="js/model/ListaTarefas.js"></script>
+    <script src="js/controller/Controller.js"></script>
+    <script>let controller = new ControllerTarefa();</script>
+</body>
+</html>
