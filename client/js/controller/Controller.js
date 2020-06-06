@@ -11,7 +11,7 @@ class ControllerTarefa{
         //executa on document ready
         HelperTable.filtra('#myInput','.dropdown-menu li');
         HelperTable.trocaClasse();
-
+        this.importaLista(this.lista.listaExemplo,'lista/exemplos')
   
         
     }
@@ -30,7 +30,7 @@ class ControllerTarefa{
         event.target.parentNode.parentNode.classList.add('efeitoOk',"fadeOut" , 'concluido');
         console.log(event);
         setTimeout(()=>{
-            //this.view.update(this.lista._lista, false);
+            this.view.update(this.lista._lista, false);
         },500);
     }
     
@@ -50,5 +50,20 @@ class ControllerTarefa{
     limpaLista(){
         this.lista.limpaLista();
         this.view.update(this.lista._lista)
+    }
+    importaLista(tipo, path){
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', path);
+        xhr.onreadystatechange = () => {
+            if(xhr.readyState ==4){
+                if(xhr.status == 200){
+                    this.lista.addArray(JSON.parse(xhr.responseText), 'exemplo')
+                    this.view.update(tipo, false);
+                }else{
+                    console.log('erro')
+                }
+            }
+        }
+        xhr.send()
     }
 }

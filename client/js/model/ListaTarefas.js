@@ -1,21 +1,26 @@
 class ListaTarefas{
     constructor(){
         this._lista = [];
+        this.listaExemplo = [];
     }
 
-    adicionaTarefa(tarefa){
-        this._lista.push(tarefa)
+    adicionaTarefa(tarefa, lista=''){
+        if(!lista){
+            this._lista.push(tarefa)
+    
+        }else{
+            this.listaExemplo.push(tarefa)
+        }
     }
-
     getTarefas(){
         return this._lista;
     }
     limpaLista(){
         this._lista= [];
     }
-    addArray(array){
+    addArray(array, tipo=''){
         array.forEach(tarefa => {
-            this.adicionaTarefa(tarefa);
+            this.adicionaTarefa(tarefa, tipo);
         });
     }
 }
