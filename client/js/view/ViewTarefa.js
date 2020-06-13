@@ -2,6 +2,7 @@ class ViewTarefa{
     constructor(){
         
         this.tabela = document.querySelector('tbody');
+        this.ul = document.querySelector('ul');
        
     }
     template (array, estado){
@@ -58,9 +59,29 @@ class ViewTarefa{
         console.log(this.botao)
         
     }
+    atualizaClasses(array){
+        //atualiza as classes no dropdown menu
+        this.ul.innerHTML = '';
+        
+        //cria um array sem valores repetidos
+        
+        let repetido = [];
+        array.map(tarefa=>{
+            repetido.push(tarefa.classe);
+        });
+        
+        let unico = new Set(repetido);
+        
+        //retorna a string a ser adicionada no DOM
+        return [...unico].map(classe =>{
+            return `<li><a>${classe}</a></li>`;
+        }).join('');
+
+    }
     update(lista , estado){
         this.tabela.innerHTML = '';
         this.template(lista, estado);
+        this.ul.innerHTML = this.atualizaClasses(lista);
  
     }
     mudancaStatus(event){

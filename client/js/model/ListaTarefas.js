@@ -4,13 +4,8 @@ class ListaTarefas{
         this.listaExemplo = [];
     }
 
-    adicionaTarefa(tarefa, lista=''){
-        if(!lista){
+    adicionaTarefa(tarefa){
             this._lista.push(tarefa)
-    
-        }else{
-            this.listaExemplo.push(tarefa)
-        }
     }
     getTarefas(){
         return this._lista;
@@ -18,9 +13,17 @@ class ListaTarefas{
     limpaLista(){
         this._lista= [];
     }
-    addArray(array, tipo=''){
+    addArray(array){
         array.forEach(tarefa => {
-            this.adicionaTarefa(tarefa, tipo);
+            this.adicionaTarefa(tarefa);
         });
+    }
+    importaLista(lista){
+        this._lista = lista;
+    }
+    addExemplos(array){
+        array.forEach(tarefa =>{
+            this.listaExemplo.push(tarefa);
+        })
     }
 }

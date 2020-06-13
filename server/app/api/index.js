@@ -4,7 +4,7 @@ var api = {}
 
 
 var Exemplos = [
-      { item : 'Estudar Calculo', classe : 'Educação', valor : 150},
+      { item : 'Estudar Calculo', classe : 'Educação', status : 150},
       { item : 'Finalizar trabalho de Desenvolvimento web', classe : 'Educação', status : false},
       { item : 'Pagar a fatura do cartão', classe : 'Finanças', status : true},
       { item : 'Reunião as 17 horas', classe : 'Trabalho', status : false},
@@ -13,6 +13,8 @@ var Exemplos = [
       { item : 'Reservar um restaurante sexta a noite', classe : 'Relacionamento', status : true},
       { item : 'Pelada as 20 horas', classe : 'Esporte', status : false}
     ];
+
+var Tarefas = [];
 
 
 api.listaExemplo = function(req, res) {
@@ -25,7 +27,17 @@ api.addExemplo = function(req, res) {
    console.log(req.body);
    Exemplos.push(req.body);
    res.status(200).json("Lista recebida");
-};
+}
+api.returnTarefas = function(req,res) {
+    var tarefasReturn = Tarefas;
+    res.json(tarefasReturn);
+}
+api.salvaTarefas = function(req, res) {
+
+    Tarefas = req.body
+
+    res.status(200).json("Lista Salva");
+}
 
 
 
