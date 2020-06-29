@@ -21,6 +21,11 @@ class ViewTarefa{
                     let btnOK = document.createElement('button')
                     btnOK.innerHTML = `<span class="glyphicon glyphicon-ok icone-ok" aria-hidden="true"></span>`;
                     btnOK.classList.add('btn', 'btn-default', `btn-ok`)
+                    //Adicionando atributos
+                    btnOK.setAttribute('data-toggle', 'tooltip')
+                    btnOK.setAttribute('tittle', 'Concluir tarefa')
+                    btnOK.setAttribute('data-placement', 'top')
+                    
                     btnOK.onclick = function() {
                         controller.concluiTarefa(event, tarefa);
                     }
@@ -28,6 +33,11 @@ class ViewTarefa{
                     let btnRemove = document.createElement('button')
                     btnRemove.innerHTML = `<span class="glyphicon glyphicon-remove icone-remove" aria-hidden="true"></span>`;
                     btnRemove.classList.add('btn', 'btn-default', `btn-remove`)
+                    //Adicionando atributos
+                    btnOK.setAttribute('data-toggle', 'tooltip')
+                    btnOK.setAttribute('tittle', 'Concluir tarefa')
+                    btnOK.setAttribute('data-placement', 'top')
+                    
                     btnRemove.onclick = function(event) {
                         controller.removeTarefa(event, tarefa)
                         console.log("remove", tarefa);
@@ -44,7 +54,7 @@ class ViewTarefa{
     criaTarefa(tarefa){
         return `<td class='col-lg-8 col-md-8 col-xs-8' id='td-item'>
         ${tarefa.item} 
-        <i class='classes'>
+        <i>
         ${tarefa.classe}
         </i>
         </td>`
@@ -74,15 +84,25 @@ class ViewTarefa{
         
         //retorna a string a ser adicionada no DOM
         return [...unico].map(classe =>{
-            return `<li><a>${classe}</a></li>`;
+            return `<li><a id='dropdown'>${classe}</a></li>`;
         }).join('');
 
+    }
+
+    filtroClasses(ativo){
+        //filtra as tarefas atraves de cliques no <li>
+        let classes = document.querySelectorAll('i')
+        classes.map(classe =>{
+            if (classe != ativo){
+                classe.parentNode.parentNode.style.display = 'none'
+            }
+        });
     }
     update(lista , estado){
         this.tabela.innerHTML = '';
         this.template(lista, estado);
         this.ul.innerHTML = this.atualizaClasses(lista);
- 
+        HelperTable.trocaClasse()
     }
     mudancaStatus(event){
 

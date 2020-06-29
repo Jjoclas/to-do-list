@@ -22,10 +22,10 @@
                 <th class="dropdown input-group input-assunto">
                     <input class="form-control dropdown-toggle" id="myInput" type="text" data-toggle="dropdown" autocomplete="off" placeholder="Assunto:">
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona()">ADD</button>
+                        <button type="button" class="btn btn-primary btn-add" onclick="controller._adiciona()" data-toggle="tooltip" data-placement="top" title="Adicionar Tarefa">ADD</button>
                     </span> 
                     <ul class="dropdown-menu">    
-                        <li><a href="#">Estudos</a></li>
+                        <li><a id='dropdown'href="#">Estudos</a></li>
                         <li><a href="#">Atividades Fisicas</a></li>
                         <li><a href="#">Trabalho</a></li>
                         <li><a href="#">Filhos</a></li>
@@ -41,17 +41,17 @@
         <tfoot>
             <tr>
                 <td colspan="2">
-                    <button type="button" class="btn btn-info" onclick='controller.exportaLista()'>
+                    <button type="button" class="btn btn-info" onclick='controller.exportaLista()' data-toggle="tooltip" data-placement="top" title="Salvar Lista">
                         <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
                     </button>
-                    <button type="button" class="btn btn-default"onclick='controller.importaLista()'>
+                    <button type="button" class="btn btn-default"onclick='controller.importaLista()' data-toggle="tooltip" data-placement="top" title="Carregar lista">
                         <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
                     </button>
-                    <button type="button" class="btn btn-danger "onclick='controller.limpaLista()'>
+                    <button type="button" class="btn btn-danger "onclick='controller.limpaLista()'data-toggle="tooltip" data-placement="top" title="Deletar Lista">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
-                    <button type="button" class="btn btn-success"  onclick="controller.filtraStatus(true)">Concluidos</button>
-                    <button type="button" class="btn btn-primary"  onclick="controller.filtraStatus(false)">Ativos</button>
+                    <button type="button" class="btn btn-success"  onclick="controller.filtraStatus(true)" data-toggle="tooltip" data-placement="top" title="Tarefas concluidas">Concluidos</button>
+                    <button type="button" class="btn btn-primary"  onclick="controller.filtraStatus(false)" data-toggle="tooltip" data-placement="top" title="Tarefas ativas">Ativos</button>
                 </td>
             </tr>
         </tfoot>

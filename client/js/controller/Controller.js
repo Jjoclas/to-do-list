@@ -15,15 +15,18 @@ class ControllerTarefa{
   
         
     }
+
     _adiciona(){
         let tarefa = new Tarefa(this.item.value, this.classe.value);
         this.lista.adicionaTarefa(tarefa);
         this.view.update(this.lista._lista, false);
         HelperTable.limpaInput();
     }
+
     filtraStatus(status){
         this.view.update(this.lista._lista, status);
     }
+
     concluiTarefa(event, tarefa){
         tarefa.status = true;
 
@@ -48,27 +51,35 @@ class ControllerTarefa{
             this.view.update(this.lista._lista, false);
         },500);
     }
+
     limpaLista(){
         this.lista.limpaLista();
         this.view.update(this.lista._lista)
     }
-    importaLista(path='lista/tarefasSalvas', lista=this.lista._lista){
+
+    filtraClasse(event){
+        let classe = event.target.innerHTML;
+        console.log(classe)
+    }
+
+    importaLista(path='lista/tarefasSalvas', lista){
         let xhr = new XMLHttpRequest();
         xhr.open('GET', path);
         xhr.onreadystatechange = () => {
             if(xhr.readyState ==4){
                 if(xhr.status == 200){
+                   /*
                     //testa se a lista adicionada é a de exemplos
                     if (path == 'lista/exemplos'){
                         
                         this.lista.addExemplos(JSON.parse(xhr.responseText))
                         this.view.update(lista, false);
-                    }else{
-
+                    }else{}
+                        */
                     this.lista.importaLista(JSON.parse(xhr.responseText))
-                    console.log(this.lista.getTarefas())
-                    this.view.update(lista, false);
-                    }
+                    this.view.update(this.lista._lista, false); 
+  
+                    
                 }else{
                     console.log('erro')
                 }
@@ -76,6 +87,7 @@ class ControllerTarefa{
         }
         xhr.send()
     }
+
     exportaLista() {
 
             let xhr = new XMLHttpRequest();
